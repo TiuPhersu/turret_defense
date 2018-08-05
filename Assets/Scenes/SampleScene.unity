@@ -784,12 +784,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4084308268310750, guid: d44806f99fdb22c43a84384105d071fc,
     type: 2}
   m_PrefabInternal: {fileID: 2072068975}
---- !u!114 &1270072139 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114202918163563514, guid: d44806f99fdb22c43a84384105d071fc,
-    type: 2}
-  m_PrefabInternal: {fileID: 2072068975}
-  m_Script: {fileID: 11500000, guid: 1a6f2df22e22e5e44955f9eb168000f6, type: 3}
 --- !u!1001 &1303732616
 Prefab:
   m_ObjectHideFlags: 0
@@ -985,8 +979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8469d464abc48384ba0090bbcc5c9ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWaypoint: {fileID: 1366698236}
-  endWaypoint: {fileID: 1270072139}
+  startWaypoint: {fileID: 2082106828}
+  endWaypoint: {fileID: 2082106828}
 --- !u!1001 &1671538217
 Prefab:
   m_ObjectHideFlags: 0

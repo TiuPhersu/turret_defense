@@ -5,6 +5,7 @@ using UnityEngine;
 //encapsulation
 
 public class Waypoint : MonoBehaviour {
+    public bool isExplored = false;// ok as is a data class public
     Vector2Int gridPos;
     const int gridSize = 10;
 
@@ -21,7 +22,6 @@ public class Waypoint : MonoBehaviour {
 
     public void SetTopColor(Color color) {
         MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRenderer.material.color = color;
-       
+        topMeshRenderer.material.color = color;  
     }
 }
