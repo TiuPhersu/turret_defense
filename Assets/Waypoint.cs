@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//encapsulation
-
 public class Waypoint : MonoBehaviour {
+    //encapsulation
+    //public ok here as this is a data class
     public bool isExplored = false;// ok as is a data class public
+    public Waypoint exploredFrom;
+
     Vector2Int gridPos;
     const int gridSize = 10;
 
