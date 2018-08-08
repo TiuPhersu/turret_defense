@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour {
             //print(waypoint.name);
             transform.position = waypoint.transform.position;// enemy moves
             //print("Visiting blocks " + waypoint.name);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
         print("Ending patrol...");
     }
