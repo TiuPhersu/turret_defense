@@ -17,11 +17,19 @@ public class Pathfinder : MonoBehaviour {
                                 Vector2Int.left};
 
     public List<Waypoint> GetPath() {
+        if (path.Count == 0){// check if the path is already moved
+            CalculatePath();//calculate path
+        }
+        return path;
+
+    }
+
+    private void CalculatePath()
+    {
         LoadBlocks();
         ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
-        return path;
     }
 
     private void CreatePath()
