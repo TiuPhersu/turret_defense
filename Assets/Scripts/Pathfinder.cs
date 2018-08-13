@@ -27,7 +27,7 @@ public class Pathfinder : MonoBehaviour {
     private void CalculatePath()
     {
         LoadBlocks();
-        ColorStartAndEnd();
+//        ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
     }
@@ -93,16 +93,15 @@ public class Pathfinder : MonoBehaviour {
         }
     }
 
-    private void ColorStartAndEnd(){
-        //todo consider moving out
-        var waypoints = FindObjectsOfType<Waypoint>();
-        foreach (Waypoint waypoint in waypoints){
-            waypoint.SetTopColor(Color.gray);//change all top to grey
-        }
-
-        startWaypoint.SetTopColor(Color.green);//set start as green
-        endWaypoint.SetTopColor(Color.red);//set end as red
-    }
+ //   private void ColorStartAndEnd(){
+ //       //todo consider moving out
+ //       var waypoints = FindObjectsOfType<Waypoint>();
+ //       foreach (Waypoint waypoint in waypoints){
+ //           waypoint.SetTopColor(Color.gray);//change all top to grey
+ //       }
+ //       startWaypoint.SetTopColor(Color.green);//set start as green
+ //       endWaypoint.SetTopColor(Color.red);//set end as red
+ //   }
 
     private void LoadBlocks(){
         var waypoints = FindObjectsOfType<Waypoint>();
@@ -116,6 +115,6 @@ public class Pathfinder : MonoBehaviour {
                 grid.Add(waypoint.GetGridPos(), waypoint);
             }
         }
-        print("Loaded " + grid.Count + " blocks");
+        //print("Loaded " + grid.Count + " blocks");
     }
 }
