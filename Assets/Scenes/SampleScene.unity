@@ -1827,6 +1827,11 @@ Prefab:
       propertyPath: m_Text
       value: 1,0
       objectReference: {fileID: 0}
+    - target: {fileID: 65695460378982140, guid: d44806f99fdb22c43a84384105d071fc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d44806f99fdb22c43a84384105d071fc, type: 2}
   m_IsPrefabParent: 0

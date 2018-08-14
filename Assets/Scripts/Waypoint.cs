@@ -7,13 +7,10 @@ public class Waypoint : MonoBehaviour {
     //public ok here as this is a data class
     public bool isExplored = false;// ok as is a data class public
     public Waypoint exploredFrom;
+    public bool isPlaceable = true;
 
     Vector2Int gridPos;
     const int gridSize = 10;
-
-    private void Start(){
-       //Physics.qu
-    }
 
     public int GetGridSize() {
         return gridSize;
@@ -28,7 +25,10 @@ public class Waypoint : MonoBehaviour {
 
     void OnMouseOver(){
         //If your mouse hovers over the GameObject with the script attached, output this message
-        print(gameObject.name);
+        if (Input.GetMouseButtonDown(0) && isPlaceable)
+        {
+            print("Clicked " + gameObject.name);
+        }
     }
 
     //    public void SetTopColor(Color color) {
