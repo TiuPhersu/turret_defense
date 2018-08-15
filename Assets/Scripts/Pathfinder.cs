@@ -39,8 +39,8 @@ public class Pathfinder : MonoBehaviour {
         Waypoint previous = endWaypoint.exploredFrom;
         while (previous != startWaypoint) {
             // add intermediate waypoints
-            previous = previous.exploredFrom;
             SetAsPath(previous);
+            previous = previous.exploredFrom;
         }
         SetAsPath(startWaypoint);
         path.Reverse();//reverse the list

@@ -8,7 +8,6 @@ public class Waypoint : MonoBehaviour {
     public bool isExplored = false;// ok as is a data class public
     public Waypoint exploredFrom;
     public bool isPlaceable = true;
-    [SerializeField] Tower towerPrefab;
 
     Vector2Int gridPos;
     const int gridSize = 10;
@@ -27,11 +26,10 @@ public class Waypoint : MonoBehaviour {
     void OnMouseOver(){
         //If your mouse hovers over the GameObject with the script attached, output this message
         if (Input.GetMouseButtonDown(0) && isPlaceable){
-            isPlaceable = false;
-            Instantiate(towerPrefab, transform.position, Quaternion.identity);
+            FindObjectOfType<TowerFactory>().AddTower(this);
             print("Clicked " + gameObject.name);
         }
-        else if (!isPlaceable) { print("Not able"); }
+        else if (Input.GetMouseButtonDown(0) && !isPlaceable) { print("Not able"); }
     }
 
     //    public void SetTopColor(Color color) {
