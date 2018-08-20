@@ -607,6 +607,36 @@ Transform:
   m_PrefabParentObject: {fileID: 4084308268310750, guid: d44806f99fdb22c43a84384105d071fc,
     type: 2}
   m_PrefabInternal: {fileID: 1402076496}
+--- !u!1 &310621114 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1518837426077674, guid: 61ecb8e95d1899d44926d31f9f775536,
+    type: 2}
+  m_PrefabInternal: {fileID: 1311652136}
+--- !u!65 &310621115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310621114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.000006, y: 63, z: 20.6}
+  m_Center: {x: -24.1, y: 31.5, z: -20.6}
+--- !u!114 &310621116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310621114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de7ec6fea67338409f5b9aec674ef55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  healthDecrease: 1
 --- !u!1001 &314735513
 Prefab:
   m_ObjectHideFlags: 0
@@ -2440,7 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9322d7b3d0c24e44bb883da6055522df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenSpawns: 10
+  secondsBetweenSpawns: 2
   enemyPrefab: {fileID: 114941686308246830, guid: 04f81ff9814844ccfa08226f8d46a3f4,
     type: 2}
 --- !u!1001 &1386587037

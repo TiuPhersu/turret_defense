@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start (){
+    [SerializeField] float movementPeriod = .5f;
+    [SerializeField] ParticleSystem goalParticle;
+
+
+    // Use this for initialization
+    void Start (){
         Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
         var path = pathfinder.GetPath();
         StartCoroutine(FollowPath(path));
@@ -17,13 +21,18 @@ public class EnemyMovement : MonoBehaviour {
             //print(waypoint.name);
             transform.position = waypoint.transform.position;// enemy moves
             //print("Visiting blocks " + waypoint.name);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(movementPeriod);
         }
+        SelfDestruct();
         print("Ending patrol...");
     }
-    
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void SelfDestruct(){
+        // important to instantiate before destroying this object
+        var vfx = Instantiate(goalParticle, transform.position, Quaternion.identity);
+        vfx.Play();
+        float destroyDelay = vfx.main.duration;//get the duration of the death vfx
+        Destroy(vfx.gameObject, destroyDelay);
+        Destroy(gameObject);// destroy the enemy
+    }
 }

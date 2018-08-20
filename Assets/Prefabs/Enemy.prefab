@@ -572,6 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f312e153b2c11474388dc9fa8d481d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementPeriod: 0.75
+  goalParticle: {fileID: 198168582196055814}
 --- !u!198 &198051237521758964
 ParticleSystem:
   m_ObjectHideFlags: 1
