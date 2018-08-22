@@ -8,6 +8,9 @@ public class EnemyDamage : MonoBehaviour {
     [SerializeField] int hitPoints = 10;
     [SerializeField] ParticleSystem hitParticlePrefab;
     [SerializeField] ParticleSystem deathParticlePrefab;
+    [SerializeField] AudioClip enemyHitSFX;
+    [SerializeField] AudioClip enemyDeathSFX;
+
 
 
     // Use this for initialization
@@ -23,6 +26,7 @@ public class EnemyDamage : MonoBehaviour {
     }
 
     void ProcessHit() {
+        GetComponent<AudioSource>().PlayOneShot(enemyHitSFX);
         hitPoints = hitPoints - 1;
         hitParticlePrefab.Play();
         //print("current hitpoints are " + hitPoints);
@@ -33,7 +37,8 @@ public class EnemyDamage : MonoBehaviour {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
         float destroyDelay = vfx.main.duration;//get the duration of the death vfx
-        Destroy(vfx.gameObject, destroyDelay);
+        Destroy(vfx.gameObject, destroyDelay);//delay the destruction of the object
+        AudioSource.PlayClipAtPoint(enemyDeathSFX, Camera.main.transform.position);// play death sfx after object is destroyed has to be heard from the camera position
         Destroy(gameObject);// destroy the enemy
     }
 }
